@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://3wwwmby4qf3k"]
+[gd_scene load_steps=7 format=3 uid="uid://3wwwmby4qf3k"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_b4tvk"]
 [ext_resource type="Script" path="res://FoodSpawner.gd" id="2_qg5hd"]
 [ext_resource type="PackedScene" path="res://food.tscn" id="3_brkd8"]
 [ext_resource type="Texture2D" uid="uid://ctw66ehyo2cvp" path="res://grid2.png" id="4_e1ph4"]
-[ext_resource type="Script" path="res://Grid2.gd" id="5_splwf"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_rjgbg"]
 radius = 50.0
@@ -45,4 +44,3 @@ texture_repeat = 2
 texture = ExtResource("4_e1ph4")
 region_enabled = true
 region_rect = Rect2(0, 0, 120000, 80000)
-script = ExtResource("5_splwf")
