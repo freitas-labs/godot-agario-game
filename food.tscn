@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://om00jnk2e7aa"]
+
+[ext_resource type="Script" path="res://food.gd" id="1_stmdm"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_n46qg"]
+radius = 50.0
+height = 100.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yfslk"]
+radius = 50.2494
+
+[node name="Food" type="Area2D" groups=["Food"]]
+script = ExtResource("1_stmdm")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("SphereMesh_n46qg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yfslk")

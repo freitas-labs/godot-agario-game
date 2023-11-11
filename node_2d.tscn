@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://3wwwmby4qf3k"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_b4tvk"]
+[ext_resource type="Script" path="res://FoodSpawner.gd" id="2_qg5hd"]
+[ext_resource type="PackedScene" path="res://food.tscn" id="3_brkd8"]
+[ext_resource type="Texture2D" uid="uid://ctw66ehyo2cvp" path="res://grid2.png" id="4_e1ph4"]
+[ext_resource type="Script" path="res://Grid2.gd" id="5_splwf"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_rjgbg"]
+radius = 50.0
+height = 100.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tdpix"]
+radius = 50.636
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("1_b4tvk")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+drag_left_margin = 0.0
+drag_top_margin = 0.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Player"]
+modulate = Color(0, 0.670588, 1, 1)
+mesh = SubResource("SphereMesh_rjgbg")
+
+[node name="Area2D" type="Area2D" parent="Player/MeshInstance2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/MeshInstance2D/Area2D"]
+shape = SubResource("CircleShape2D_tdpix")
+
+[node name="FoodSpawner" type="Node2D" parent="."]
+script = ExtResource("2_qg5hd")
+food = ExtResource("3_brkd8")
+
+[node name="Grid2" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+texture = ExtResource("4_e1ph4")
+region_enabled = true
+region_rect = Rect2(0, 0, 120000, 80000)
+script = ExtResource("5_splwf")
